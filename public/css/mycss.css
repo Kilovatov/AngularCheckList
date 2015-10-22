@@ -1,0 +1,21 @@
+.done-true{
+	text-decoration: line-through;
+	font-weight: normal;
+	color: grey;
+}
+.done-false{
+	text-decoration: none;
+}
+
+.btn-right{
+	float: right;
+}
+
+.task-container{
+	max-width: 768px;
+	margin: 1em;
+}
+
+.form-inline{
+	text-align: center;
+}
