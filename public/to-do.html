@@ -1,0 +1,11 @@
+<article>
+    <form class='form-inline'>
+        <to-do-form ng-repeat='item in formItems' form='item'></to-do-form>
+        <button class='btn btn-default' ng-click='addTask()'>create</button>
+    </form>
+    <nav class='nav nav-tabs'>
+        <li ng-repeat='filter in filters' class='{{filter.active}}'><a href='#' ng-click='setFilter($index)'>{{filter.name}}</a></li>
+    </nav>
+    <task-line ng-repeat='task in tasks' done='task.done' deadline='task.deadline' on-del='delTask($index)' on-edit='edtTask($index)' ng-show='show($index) && !task.editRegime'>{{task.task}}</task-line>
+    <edit-task-line ng-repeat='task in tasks' text='task.task' deadline='task.deadline' on-save='saveTask($index)' ng-show='show($index) && task.editRegime'>{{task.task}}</edit-task-line>
+</article>

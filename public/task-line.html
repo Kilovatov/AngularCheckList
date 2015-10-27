@@ -1,9 +1,7 @@
-<input type='checkbox' ng-model='content.done' ng-hide='content.editRegime'>
-<b class='done-{{content.done}}' ng-hide='content.editRegime' title='{{content}}'>{{content.task}}</b>
-<span ng-hide='content.editRegime'>{{content.deadline? 'should be done till': ''}} {{content.deadline | date}}</span>
-<button class='btn btn-default btn-right' ng-click='onDel()' ng-hide='content.editRegime'>delete</button>
-<button class='btn btn-default btn-right' ng-click='onEdit()' ng-hide='content.editRegime'>edit</button>
-<input type='text' ng-model='content.task' ng-show='content.editRegime'>
-<input type='date' ng-model='content.deadline' ng-show='content.editRegime'>
-<button class='btn btn-default btn-right' ng-click='onSave()' ng-show='content.editRegime'>save</button>
-
+<div class='task-container'>
+<input type='checkbox' ng-model='done'>
+<span ng-transclude class='done-{{done}}'></span>
+<span>{{deadline? 'should be done till': ''}} {{deadline | date}}</span>
+<button class='btn btn-default btn-right' ng-click='onDel()'>delete</button>
+<button class='btn btn-default btn-right' ng-click='onEdit()' ng-disabled="done">edit</button>
+</div>

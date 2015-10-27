@@ -44,7 +44,7 @@ var toDoControllers = angular.module('toDoControllers', [])
     }];
     $scope.activeFilter = 1;
 
-    $scope.tasks = window.MODULE.config.tasks || [];
+    $scope.tasks =  []; //window.MODULE.config.tasks ||
 
     $scope.addTask = function() {
     	if (!$scope.formItems[0].value){
@@ -86,7 +86,5 @@ var toDoControllers = angular.module('toDoControllers', [])
         });
         $scope.filters[index].active = "active";
     };
-
-
-    window.MODULE.config = {formInputs: $scope.formItems, filters: $scope.filters, tasks: $scope.tasks}; 
+   
 }])
